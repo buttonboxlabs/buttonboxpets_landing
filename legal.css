@@ -124,7 +124,34 @@ body.legal-page {
   line-height: 1.4;
 }
 
-.legal-card > a {
+.legal-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--auth-border);
+  border-radius: 50%;
+  background: var(--auth-cream);
+  box-shadow: 0 3px 8px rgba(120,74,36,.18);
+  color: var(--auth-green);
+  font: 30px/1 Arial, sans-serif;
+  text-decoration: none;
+}
+
+.legal-close:hover {
+  background: var(--auth-glow);
+}
+
+.legal-close:focus-visible {
+  outline: 3px solid var(--auth-green);
+  outline-offset: 3px;
+}
+
+.legal-card > a:not(.legal-close) {
   display: inline-block;
   margin-top: 24px;
   color: var(--auth-green);
