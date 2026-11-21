@@ -1,0 +1,192 @@
+:root {
+  color-scheme: light;
+  --auth-cream: #F7F1E8;
+  --auth-glow: #FFFAF0;
+  --auth-tan: #EBDCC4;
+  --auth-green: #2F5D4E;
+  --auth-text: #2B2A26;
+  --auth-label: #3B352B;
+  --auth-secondary: #4A4337;
+  --auth-muted: #5E5648;
+  --auth-border: #D4C2A5;
+  --auth-card-radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.legal-page {
+  min-height: 100dvh;
+  margin: 0;
+  padding: 36px 20px;
+  background: radial-gradient(ellipse at 50% 12%, var(--auth-glow), transparent 34rem), var(--auth-cream);
+  color: var(--auth-text);
+  font-family: Nunito, sans-serif;
+}
+
+.legal-card {
+  position: relative;
+  margin: 0 auto;
+  border: 0;
+  border-radius: var(--auth-card-radius);
+  padding: 26px 22px;
+  background: var(--auth-tan);
+  box-shadow: 0 20px 36px -16px rgba(120,74,36,.4), 0 3px 8px rgba(120,74,36,.12), inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+.legal-card:is(.terms-card, .privacy-card) {
+  max-width: 880px;
+  padding: clamp(24px, 5vw, 56px);
+}
+
+.legal-card h1 {
+  color: var(--auth-green);
+  font: 600 32px Fredoka, sans-serif;
+}
+
+:is(.bbp-terms, .bbp-privacy) {
+  color: var(--auth-text);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+:is(.bbp-terms, .bbp-privacy) h1 {
+  margin: 0;
+  font-size: clamp(27px, 5vw, 36px);
+  line-height: 1.2;
+}
+
+:is(.bbp-terms, .bbp-privacy) .subtitle {
+  margin: 8px 0 32px;
+  color: var(--auth-muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+:is(.bbp-terms, .bbp-privacy) h2 {
+  margin: 38px 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--auth-border);
+  color: var(--auth-green);
+  font-size: 19px;
+  line-height: 1.35;
+  scroll-margin-top: 20px;
+}
+
+:is(.bbp-terms, .bbp-privacy) h3 {
+  margin: 24px 0 8px;
+  color: var(--auth-label);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+:is(.bbp-terms, .bbp-privacy) p {
+  margin: 0 0 16px;
+}
+
+:is(.bbp-terms, .bbp-privacy) ul {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+}
+
+:is(.bbp-terms, .bbp-privacy) li {
+  margin-bottom: 10px;
+}
+
+.legal-card :is(.bbp-terms, .bbp-privacy) a {
+  display: inline;
+  min-height: 0;
+  margin: 0;
+  color: var(--auth-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:is(.bbp-terms, .bbp-privacy) :is(.terms-toc, .privacy-toc) {
+  display: grid;
+  gap: 2px 24px;
+  padding: 0;
+  list-style: none;
+}
+
+:is(.bbp-terms, .bbp-privacy) :is(.terms-toc, .privacy-toc) li {
+  margin: 0;
+}
+
+.legal-card :is(.bbp-terms, .bbp-privacy) :is(.terms-toc, .privacy-toc) a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.legal-card > a {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--auth-green);
+  font-weight: 700;
+}
+
+.bbp-terms .callout {
+  margin: 20px 0;
+  padding: 16px 18px;
+  border-left: 4px solid var(--auth-green);
+  border-radius: 0 12px 12px 0;
+  background: rgba(255,250,240,.7);
+}
+
+.privacy-table-wrap {
+  max-width: 100%;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.privacy-table-wrap:focus-visible {
+  outline: 3px solid var(--auth-green);
+  outline-offset: 2px;
+}
+
+.bbp-privacy table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.bbp-privacy th,
+.bbp-privacy td {
+  border: 1px solid var(--auth-border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.bbp-privacy th {
+  background: var(--auth-green);
+  color: white;
+}
+
+.bbp-privacy tr:nth-child(even) {
+  background: rgba(255,250,240,.6);
+}
+
+.bbp-privacy .privacy-table-hint {
+  color: var(--auth-secondary);
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :is(.bbp-terms, .bbp-privacy) :is(.terms-toc, .privacy-toc) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 760px) {
+  .bbp-privacy .privacy-table-hint {
+    display: none;
+  }
+}
